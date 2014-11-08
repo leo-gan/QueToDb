@@ -1,0 +1,5 @@
+F:\Projects\Leo\Git\QueToDb\QueToDb.Quer\bin\Debug\QueToDb.Quer.dll
+F:\Projects\Leo\Git\QueToDb\QueToDb.Quer\bin\Debug\QueToDb.Quer.pdb
+F:\Projects\Leo\Git\QueToDb\QueToDb.Quer\obj\Debug\QueToDb.Quer.csprojResolveAssemblyReference.cache
+F:\Projects\Leo\Git\QueToDb\QueToDb.Quer\obj\Debug\QueToDb.Quer.dll
+F:\Projects\Leo\Git\QueToDb\QueToDb.Quer\obj\Debug\QueToDb.Quer.pdb

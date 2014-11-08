@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueToDb.Quer", "QueToDb.Quer\QueToDb.Quer.csproj", "{1EFE9467-71DA-4ADF-AFF1-FF4F753F1C14}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Queues", "Queues", "{63A11E29-00C5-4CC8-929B-967777586268}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dbs", "Dbs", "{AC111026-4DA7-4BC0-AF0D-17A64B63E263}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueToDb.Queues.NetMq", "Queues\QueToDb.Queues.NetMq\QueToDb.Queues.NetMq.csproj", "{30491CCC-03C3-485E-82F2-3E59046C1C81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueToDb.Tests.NetMq", "Tests\QueToDb.Tests.NetMq\QueToDb.Tests.NetMq.csproj", "{130F82D9-3B2E-445E-9AB0-9636FE158176}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1849F48B-7DB7-4E2D-BD8A-D696752F8938}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1EFE9467-71DA-4ADF-AFF1-FF4F753F1C14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EFE9467-71DA-4ADF-AFF1-FF4F753F1C14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EFE9467-71DA-4ADF-AFF1-FF4F753F1C14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EFE9467-71DA-4ADF-AFF1-FF4F753F1C14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30491CCC-03C3-485E-82F2-3E59046C1C81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30491CCC-03C3-485E-82F2-3E59046C1C81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30491CCC-03C3-485E-82F2-3E59046C1C81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30491CCC-03C3-485E-82F2-3E59046C1C81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{130F82D9-3B2E-445E-9AB0-9636FE158176}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{130F82D9-3B2E-445E-9AB0-9636FE158176}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{130F82D9-3B2E-445E-9AB0-9636FE158176}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{130F82D9-3B2E-445E-9AB0-9636FE158176}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{30491CCC-03C3-485E-82F2-3E59046C1C81} = {63A11E29-00C5-4CC8-929B-967777586268}
+		{130F82D9-3B2E-445E-9AB0-9636FE158176} = {1849F48B-7DB7-4E2D-BD8A-D696752F8938}
+	EndGlobalSection
+EndGlobal

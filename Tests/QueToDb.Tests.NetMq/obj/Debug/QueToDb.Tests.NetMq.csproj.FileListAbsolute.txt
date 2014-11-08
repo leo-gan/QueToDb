@@ -1,0 +1,15 @@
+F:\Projects\Leo\Git\QueToDb\Tests\QueToDb.Tests.NetMq\bin\Debug\QueToDb.Tests.NetMq.dll.config
+F:\Projects\Leo\Git\QueToDb\Tests\QueToDb.Tests.NetMq\bin\Debug\QueToDb.Tests.NetMq.dll
+F:\Projects\Leo\Git\QueToDb\Tests\QueToDb.Tests.NetMq\bin\Debug\QueToDb.Tests.NetMq.pdb
+F:\Projects\Leo\Git\QueToDb\Tests\QueToDb.Tests.NetMq\bin\Debug\Newtonsoft.Json.dll
+F:\Projects\Leo\Git\QueToDb\Tests\QueToDb.Tests.NetMq\bin\Debug\nunit.framework.dll
+F:\Projects\Leo\Git\QueToDb\Tests\QueToDb.Tests.NetMq\bin\Debug\QueToDb.Quer.dll
+F:\Projects\Leo\Git\QueToDb\Tests\QueToDb.Tests.NetMq\bin\Debug\QueToDb.Queues.NetMq.dll
+F:\Projects\Leo\Git\QueToDb\Tests\QueToDb.Tests.NetMq\bin\Debug\NetMQ.dll
+F:\Projects\Leo\Git\QueToDb\Tests\QueToDb.Tests.NetMq\bin\Debug\QueToDb.Quer.pdb
+F:\Projects\Leo\Git\QueToDb\Tests\QueToDb.Tests.NetMq\bin\Debug\QueToDb.Queues.NetMq.pdb
+F:\Projects\Leo\Git\QueToDb\Tests\QueToDb.Tests.NetMq\bin\Debug\Newtonsoft.Json.xml
+F:\Projects\Leo\Git\QueToDb\Tests\QueToDb.Tests.NetMq\bin\Debug\nunit.framework.xml
+F:\Projects\Leo\Git\QueToDb\Tests\QueToDb.Tests.NetMq\obj\Debug\QueToDb.Tests.NetMq.csprojResolveAssemblyReference.cache
+F:\Projects\Leo\Git\QueToDb\Tests\QueToDb.Tests.NetMq\obj\Debug\QueToDb.Tests.NetMq.dll
+F:\Projects\Leo\Git\QueToDb\Tests\QueToDb.Tests.NetMq\obj\Debug\QueToDb.Tests.NetMq.pdb
