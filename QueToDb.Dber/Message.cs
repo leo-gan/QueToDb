@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace QueToDb.Quer
+namespace QueToDb.Dber
 {
     public class Message
     {

@@ -1,8 +1,11 @@
-﻿namespace QueToDb.Quer
+﻿using System.Collections.Generic;
+
+namespace QueToDb.Dber
 {
     public interface IReader
     {
         bool Initialize(params string[] configs); // Return: true - if initializing was successfull ; false - otherwise
-        Message Receive();
+        Message ReadOne(string id);
+        List<Message> Read(string query);
     }
 }

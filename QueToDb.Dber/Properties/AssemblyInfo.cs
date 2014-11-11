@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 
-[assembly: AssemblyTitle("QueToDb.Quer")]
+[assembly: AssemblyTitle("QueToDb.Dber")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("QueToDb.Quer")]
+[assembly: AssemblyProduct("QueToDb.Dber")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -22,7 +22,7 @@ using System.Runtime.InteropServices;
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 
-[assembly: Guid("68c4c47e-9d0d-447b-9c72-937ce1477261")]
+[assembly: Guid("a0508187-a794-47d1-a908-8bf6f7e70bfb")]
 
 // Version information for an assembly consists of the following four values:
 //

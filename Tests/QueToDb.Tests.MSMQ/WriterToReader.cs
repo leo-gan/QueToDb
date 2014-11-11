@@ -31,7 +31,7 @@ namespace QueToDb.Tests.MSMQ
                 Body = msgBody,
                 Properties = new[]
                 {
-                    "Properties1: PropertiesOne", "PropertiesGuid: " + Guid.NewGuid()
+                    "Property1: Property1", "PropertiyGuid: " + Guid.NewGuid()
                 },
                 DateTimeStamp = DateTime.UtcNow,
                 Type = "MyMsgType"
