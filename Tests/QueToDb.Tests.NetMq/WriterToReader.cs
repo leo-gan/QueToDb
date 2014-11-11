@@ -25,7 +25,7 @@ namespace QueToDb.Tests.NetMq
 
         private static Message CreateMessage()
         {
-            byte[] msgBody = Encoding.UTF8.GetBytes("Test message body:" + Guid.NewGuid());
+            var msgBody = Encoding.UTF8.GetBytes("Test message body:" + Guid.NewGuid());
             var msg = new Message
             {
                 Body = msgBody,

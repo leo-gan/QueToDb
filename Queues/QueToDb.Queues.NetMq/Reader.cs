@@ -42,7 +42,7 @@ namespace QueToDb.Queues.NetMq
 
         public T Receive<T>()
         {
-            byte[] byteArray = _sock.Receive();
+            var byteArray = _sock.Receive();
             return JsonConvert.DeserializeObject<T>(Encoding.UTF8.GetString(byteArray));
         }
 

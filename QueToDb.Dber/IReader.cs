@@ -6,6 +6,6 @@ namespace QueToDb.Dber
     {
         bool Initialize(params string[] configs); // Return: true - if initializing was successfull ; false - otherwise
         Message ReadOne(string id);
-        List<Message> Read(string query);
+        List<Message> Read(List<string> idlList);
     }
 }
