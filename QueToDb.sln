@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueToDb.Dber", "QueToDb.Dbe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueToDb.Tests.MongoDb", "Tests\QueToDb.Tests.MongoDb\QueToDb.Tests.MongoDb.csproj", "{D0DD043C-E996-4258-B065-27A2458E49E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueToDb.Dbs.DocumentDB", "Dbs\QueToDb.Dbs.DocumentDB\QueToDb.Dbs.DocumentDB.csproj", "{E8B2975F-293E-4B14-8F56-82E90226BE0A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{D0DD043C-E996-4258-B065-27A2458E49E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0DD043C-E996-4258-B065-27A2458E49E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0DD043C-E996-4258-B065-27A2458E49E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8B2975F-293E-4B14-8F56-82E90226BE0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8B2975F-293E-4B14-8F56-82E90226BE0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8B2975F-293E-4B14-8F56-82E90226BE0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8B2975F-293E-4B14-8F56-82E90226BE0A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,5 +80,6 @@ Global
 		{3F825C63-76BE-4B68-9B65-DB416A792DAC} = {1849F48B-7DB7-4E2D-BD8A-D696752F8938}
 		{DEAF6DFF-CAAE-41F1-BD09-9C7CD584B39B} = {AC111026-4DA7-4BC0-AF0D-17A64B63E263}
 		{D0DD043C-E996-4258-B065-27A2458E49E2} = {1849F48B-7DB7-4E2D-BD8A-D696752F8938}
+		{E8B2975F-293E-4B14-8F56-82E90226BE0A} = {AC111026-4DA7-4BC0-AF0D-17A64B63E263}
 	EndGlobalSection
 EndGlobal
