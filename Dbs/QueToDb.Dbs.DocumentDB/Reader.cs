@@ -68,23 +68,12 @@ namespace QueToDb.Dbs.DocumentDB
 
         public Message ReadOne(string id)
         {
-            IQueryable<dynamic> query = _client.CreateDocumentQuery(_database.SelfLink,
-                "SELECT * FROM " + _collectionName +
-                " c WHERE c.ID = " + id);
-            return query.OfType<Message>().AsEnumerable().First();
+            return (Message)(dynamic)_client.ReadDocumentAsync(id).Result.Resource;
         }
 
         public List<Message> Read(List<string> idlList)
         {
-            var msgList = new List<Message>();
-            foreach (string id in idlList)
-            {
-                IQueryable<dynamic> query = _client.CreateDocumentQuery(_database.SelfLink,
-                    "SELECT * FROM " + _collectionName +
-                    " c WHERE c.ID = " + id);
-                msgList.AddRange(query.OfType<Message>().AsEnumerable());
-            }
-            return msgList;
+            return idlList.Select(ReadOne).ToList();
         }
 
         #endregion
