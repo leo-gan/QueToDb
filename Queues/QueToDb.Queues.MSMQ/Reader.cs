@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Configuration;
 using System.Messaging;
-using Newtonsoft.Json;
 using QueToDb.Quer;
 using Message = QueToDb.Quer.Message;
 
@@ -12,10 +11,12 @@ namespace QueToDb.Queues.MSMQ
         private readonly string _address = ConfigurationManager.AppSettings["QueToDb.Queues.MSMQ.Address"];
         private MessageQueue _q;
 
+        #region IReader Members
+
         public bool Initialize(params string[] configs)
         {
             // a nonexisted queue created only in Writer!
-            _q = new MessageQueue(_address) { Formatter = new BinaryMessageFormatter() };
+            _q = new MessageQueue(_address) {Formatter = new BinaryMessageFormatter()};
             return true;
         }
 
@@ -23,13 +24,16 @@ namespace QueToDb.Queues.MSMQ
         {
             try
             {
-                var msg = _q.Receive(new TimeSpan(0, 0, 0, 0, 100));
-                return msg != null ? JsonConvert.DeserializeObject<Message>(msg.Body.ToString()) : null;
+                _q.Formatter = new BinaryMessageFormatter();
+                System.Messaging.Message receive = _q.Receive(new TimeSpan(0, 0, 0, 0, 100));
+                return receive != null ? (Message) receive.Body : null;
             }
             catch
             {
                 return null; // if message is not delivered yet}
             }
         }
+
+        #endregion
     }
 }

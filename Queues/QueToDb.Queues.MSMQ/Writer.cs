@@ -1,6 +1,5 @@
 ﻿using System.Configuration;
 using System.Messaging;
-using Newtonsoft.Json;
 using QueToDb.Quer;
 using Message = QueToDb.Quer.Message;
 
@@ -31,8 +30,7 @@ namespace QueToDb.Queues.MSMQ
 
         public void Send(Message msg)
         {
-            var msgString = JsonConvert.SerializeObject(msg);
-            _q.Send(msgString);
+            _q.Send(msg);
         }
     }
 }

@@ -2,6 +2,7 @@
 
 namespace QueToDb.Quer
 {
+    [Serializable]
     public class Message
     {
         public string Type { set; get; }
