@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
 using Microsoft.Azure.Documents.Linq;
@@ -10,21 +9,20 @@ using QueToDb.Dber;
 
 namespace QueToDb.Dbs.DocumentDB
 {
-    public class Reader  : IReader
+    public class Writer : IWriter
     {
         private DocumentClient _client;
         private DocumentCollection _collection;
-        private string _collectionName;
         private Database _database;
 
-        #region Implementation of IReader
+        #region Implementation of IWriter
 
-        public  bool Initialize(params string[] configs)
+        public bool Initialize(params string[] configs)
         {
-            var endpoint = ConfigurationManager.AppSettings["QueToDb.Dbs.DocumentDB.Endpoint"];
-            var authKey = ConfigurationManager.AppSettings["QueToDb.Dbs.DocumentDB.AuthKey"];
-            var databaseName = ConfigurationManager.AppSettings["QueToDb.Dbs.DocumentDB.DbName"];
-            _collectionName = ConfigurationManager.AppSettings["QueToDb.Dbs.DocumentDB.CollectionName"];
+            string endpoint = ConfigurationManager.AppSettings["QueToDb.Dbs.DocumentDB.Endpoint"];
+            string authKey = ConfigurationManager.AppSettings["QueToDb.Dbs.DocumentDB.AuthKey"];
+            string databaseName = ConfigurationManager.AppSettings["QueToDb.Dbs.DocumentDB.DbName"];
+            string collectionName = ConfigurationManager.AppSettings["QueToDb.Dbs.DocumentDB.CollectionName"];
             // use hard coded params if they are not set up in config file
             if (String.IsNullOrEmpty(endpoint))
                 if (configs.Length >= 1)
@@ -38,36 +36,43 @@ namespace QueToDb.Dbs.DocumentDB
                 if (configs.Length >= 3)
                     databaseName = configs[2];
                 else return false;
-            if (String.IsNullOrEmpty(_collectionName))
+            if (String.IsNullOrEmpty(collectionName))
                 if (configs.Length >= 4)
-                    _collectionName = configs[3];
+                    collectionName = configs[3];
                 else return false;
 
             _client = new DocumentClient(new Uri(endpoint), authKey);
 
+
             _database = _client.CreateDatabaseQuery()
-                 .Where(d => d.Id == databaseName)
-                 .AsEnumerable()
-                 .FirstOrDefault() ?? _client.CreateDatabaseAsync(new Database { Id = databaseName }).Result;
+                .Where(d => d.Id == databaseName)
+                .AsEnumerable()
+                .FirstOrDefault() ?? _client.CreateDatabaseAsync(new Database {Id = databaseName}).Result;
 
             _collection = _client.CreateDocumentCollectionQuery(_database.SelfLink)
-                .Where(c => c.Id == _collectionName)
+                .Where(c => c.Id == collectionName)
                 .AsEnumerable()
                 .FirstOrDefault() ??
                           _client.CreateDocumentCollectionAsync(_database.SelfLink,
-                              new DocumentCollection { Id = _collectionName }).Result;
-
+                              new DocumentCollection {Id = collectionName}).Result;
             return true;
         }
 
-        public Message ReadOne(string id)
+        /// <summary>
+        ///     It uses a document.SelfLink as the document Id.
+        /// </summary>
+        /// <param name="msg"></param>
+        /// <returns></returns>
+        public string Write(Message msg)
         {
-            return (Message)(dynamic)_client.ReadDocumentAsync(id).Result.Resource;
+            return _client.CreateDocumentAsync(_collection.SelfLink, msg).Result.Resource.SelfLink;
         }
 
-        public List<Message> Read(List<string> idlList)
+        public List<string> Write(List<Message> msgList)
         {
-            return idlList.Select(ReadOne).ToList();
+            return
+                msgList.Select(msg => _client.CreateDocumentAsync(_collection.SelfLink, msg).Result.Resource.SelfLink)
+                    .ToList();
         }
 
         #endregion
