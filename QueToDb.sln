@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueToDb.Quer", "QueToDb.Quer\QueToDb.Quer.csproj", "{1EFE9467-71DA-4ADF-AFF1-FF4F753F1C14}"
 EndProject
@@ -28,6 +28,15 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueToDb.Dbs.DocumentDB", "Dbs\QueToDb.Dbs.DocumentDB\QueToDb.Dbs.DocumentDB.csproj", "{E8B2975F-293E-4B14-8F56-82E90226BE0A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueToDb.Tests.DocumentDB", "Tests\QueToDb.Tests.DocumentDB\QueToDb.Tests.DocumentDB.csproj", "{9BFA3AD5-E0C0-47CD-B6BE-F1E54F696132}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueToDb.Queues.Redis", "Queues\QueToDb.Queues.Redis\QueToDb.Queues.Redis.csproj", "{1DC294C3-82F2-4559-81CE-D6EF2E1C13C6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F0BA3032-74FA-446C-B697-F959C4C82A8D}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueToDb.Tests.Functional", "Tests\QueToDb.Tests.Functional\QueToDb.Tests.Functional.csproj", "{B0D5C289-AEB4-430E-B8DA-4FE8D415C67C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +84,14 @@ Global
 		{9BFA3AD5-E0C0-47CD-B6BE-F1E54F696132}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BFA3AD5-E0C0-47CD-B6BE-F1E54F696132}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BFA3AD5-E0C0-47CD-B6BE-F1E54F696132}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DC294C3-82F2-4559-81CE-D6EF2E1C13C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DC294C3-82F2-4559-81CE-D6EF2E1C13C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DC294C3-82F2-4559-81CE-D6EF2E1C13C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DC294C3-82F2-4559-81CE-D6EF2E1C13C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0D5C289-AEB4-430E-B8DA-4FE8D415C67C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0D5C289-AEB4-430E-B8DA-4FE8D415C67C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0D5C289-AEB4-430E-B8DA-4FE8D415C67C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0D5C289-AEB4-430E-B8DA-4FE8D415C67C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,5 +105,7 @@ Global
 		{D0DD043C-E996-4258-B065-27A2458E49E2} = {1849F48B-7DB7-4E2D-BD8A-D696752F8938}
 		{E8B2975F-293E-4B14-8F56-82E90226BE0A} = {AC111026-4DA7-4BC0-AF0D-17A64B63E263}
 		{9BFA3AD5-E0C0-47CD-B6BE-F1E54F696132} = {1849F48B-7DB7-4E2D-BD8A-D696752F8938}
+		{1DC294C3-82F2-4559-81CE-D6EF2E1C13C6} = {63A11E29-00C5-4CC8-929B-967777586268}
+		{B0D5C289-AEB4-430E-B8DA-4FE8D415C67C} = {1849F48B-7DB7-4E2D-BD8A-D696752F8938}
 	EndGlobalSection
 EndGlobal

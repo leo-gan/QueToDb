@@ -19,8 +19,8 @@ namespace QueToDb.Dbs.MongoDB
         {
             _connectionString =
                 ConfigurationManager.AppSettings["QueToDb.Dbs.MongoDB.ConnectionString"];
-            string databaseName = ConfigurationManager.AppSettings["QueToDb.Dbs.MongoDB.DbName"];
-            string collectionName = ConfigurationManager.AppSettings["QueToDb.Dbs.MongoDB.CollectionName"];
+            var databaseName = ConfigurationManager.AppSettings["QueToDb.Dbs.MongoDB.DbName"];
+            var collectionName = ConfigurationManager.AppSettings["QueToDb.Dbs.MongoDB.CollectionName"];
             // use hard coded params if they donot set up in config file
             if (String.IsNullOrEmpty(_connectionString))
                 if (configs.Length >= 1)

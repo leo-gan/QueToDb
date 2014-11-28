@@ -21,8 +21,8 @@ namespace QueToDb.Dbs.MongoDB
         {
             _connectionString =
                 ConfigurationManager.AppSettings["QueToDb.Dbs.MongoDB.ConnectionString"];
-            string databaseName = ConfigurationManager.AppSettings["QueToDb.Dbs.MongoDB.DbName"];
-            string collectionName = ConfigurationManager.AppSettings["QueToDb.Dbs.MongoDB.CollectionName"];
+            var databaseName = ConfigurationManager.AppSettings["QueToDb.Dbs.MongoDB.DbName"];
+            var collectionName = ConfigurationManager.AppSettings["QueToDb.Dbs.MongoDB.CollectionName"];
             // use hard coded params if they are not set up in config file
             if (String.IsNullOrEmpty(_connectionString))
                 if (configs.Length >= 1)
@@ -52,8 +52,8 @@ namespace QueToDb.Dbs.MongoDB
 
         public List<Message> Read(List<string> idlList)
         {
-            List<ObjectId> objectIdList = idlList.Select(id => new ObjectId(id)).ToList();
-            IMongoQuery query = Query<Record>.In(b => b.Id, objectIdList);
+            var objectIdList = idlList.Select(id => new ObjectId(id)).ToList();
+            var query = Query<Record>.In(b => b.Id, objectIdList);
             return _collection.FindAs<Record>(query).Select(record => record.Message).ToList();
         }
 
