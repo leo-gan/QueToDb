@@ -35,6 +35,12 @@ namespace QueToDb.Queues.NetMq
             }
         }
 
+        public void Dispose()
+        {
+            if (_sock != null) _sock.Dispose();
+            if (_ctx != null) _ctx.Dispose();
+        }
+
         public Message Receive()
         {
             return Receive<Message>();
