@@ -27,6 +27,10 @@ namespace QueToDb.Queues.MSMQ
             return true;
         }
 
+        public void Dispose()
+        {
+            if (_q != null) _q.Dispose();
+        }
 
         public void Send(Message msg)
         {

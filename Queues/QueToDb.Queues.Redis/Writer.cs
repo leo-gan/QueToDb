@@ -34,7 +34,7 @@ namespace QueToDb.Queues.Redis
 
         public void Dispose()
         {
-            _redis.Dispose();
+            if (_redis != null) _redis.Dispose();
         }
 
         public void Send(Message msg)

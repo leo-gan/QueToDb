@@ -1,10 +1,10 @@
 ﻿using NUnit.Framework;
 using QueToDb.Queues.Redis;
 
-namespace QueToDb.Tests.Functional
+namespace QueToDb.Tests.Functional.Queues
 {
     [TestFixture]
-    public class Redis_WriterToReader
+    public class NetMq
     {
         #region Setup/Teardown
 
@@ -24,7 +24,7 @@ namespace QueToDb.Tests.Functional
 
         #endregion
 
-        private const string Transport = "Redis";
+        private const string Transport = "NetMq";
         private readonly Writer _w = new Writer();
         private readonly Reader _r = new Reader();
 
@@ -33,7 +33,7 @@ namespace QueToDb.Tests.Functional
         [TestCase(100, '*')]
         public void ReadWrite1Msg(int msgBodySizeChars, char msgBodyFiller)
         {
-            WriterToReader.ReadWrite1Msg(_w, _r, Transport, msgBodySizeChars, msgBodyFiller);
+            WriteAndRead.ReadWrite1Msg(_w, _r, Transport, msgBodySizeChars, msgBodyFiller);
         }
 
         [Test]
@@ -43,7 +43,7 @@ namespace QueToDb.Tests.Functional
         [TestCase(1000, '*', 3000)]
         public void ReadWriteManyMsgInBatch(int msgBodySizeChars, char msgBodyFiller, int msgNumber)
         {
-            WriterToReader.ReadWriteManyMsgInBatch(_w, _r, Transport, msgBodySizeChars, msgBodyFiller, msgNumber);
+            WriteAndRead.ReadWriteManyMsgInBatch(_w, _r, Transport, msgBodySizeChars, msgBodyFiller, msgNumber);
         }
 
         [Test]
@@ -53,7 +53,7 @@ namespace QueToDb.Tests.Functional
         [TestCase(1000, '*', 3000)]
         public void ReadWriteManyMsgInSequence(int msgBodySizeChars, char msgBodyFiller, int msgNumber)
         {
-            WriterToReader.ReadWriteManyMsgInSequence(_w, _r, Transport, msgBodySizeChars, msgBodyFiller, msgNumber);
+            WriteAndRead.ReadWriteManyMsgInSequence(_w, _r, Transport, msgBodySizeChars, msgBodyFiller, msgNumber);
         }
     }
 }

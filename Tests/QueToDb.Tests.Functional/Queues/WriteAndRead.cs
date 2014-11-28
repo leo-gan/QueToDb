@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Configuration;
 using System.Diagnostics;
 using System.Text;
 using Newtonsoft.Json;
 using NUnit.Framework;
 using QueToDb.Quer;
-using QueToDb.Queues.Redis;
 
-namespace QueToDb.Tests.Functional
+namespace QueToDb.Tests.Functional.Queues
 {
-    public class WriterToReader
+    public class WriteAndRead
     {
         private static Message CreateMessage(int msgBodySizeChars, char msgBodyFiller)
         {
