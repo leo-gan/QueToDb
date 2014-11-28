@@ -62,6 +62,7 @@ namespace QueToDb.Dbs.DocumentDB
 
         public Message ReadOne(string id)
         {
+            // we assume the id is for the document with Message type.
             return (Message)(dynamic)_client.ReadDocumentAsync(id).Result.Resource;
         }
 
