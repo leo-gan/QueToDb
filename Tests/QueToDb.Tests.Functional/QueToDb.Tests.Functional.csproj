@@ -64,8 +64,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WriterToReader.cs" />
-    <Compile Include="Redis_WriterToReader.cs" />
+    <Compile Include="Queues\MSMQ.cs" />
+    <Compile Include="Queues\NetMq.cs" />
+    <Compile Include="Queues\WriteAndRead.cs" />
+    <Compile Include="Redis.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -75,6 +77,14 @@
     <ProjectReference Include="..\..\QueToDb.Quer\QueToDb.Quer.csproj">
       <Project>{1efe9467-71da-4adf-aff1-ff4f753f1c14}</Project>
       <Name>QueToDb.Quer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Queues\QueToDb.Queues.MSMQ\QueToDb.Queues.MSMQ.csproj">
+      <Project>{57182830-8121-4394-831c-ffcc4a065a38}</Project>
+      <Name>QueToDb.Queues.MSMQ</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Queues\QueToDb.Queues.NetMq\QueToDb.Queues.NetMq.csproj">
+      <Project>{30491ccc-03c3-485e-82f2-3e59046c1c81}</Project>
+      <Name>QueToDb.Queues.NetMq</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Queues\QueToDb.Queues.Redis\QueToDb.Queues.Redis.csproj">
       <Project>{1dc294c3-82f2-4559-81ce-d6ef2e1c13c6}</Project>
