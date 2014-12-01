@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using QueToDb.Queues.Redis;
+using QueToDb.Queues.NetMq;
 
 namespace QueToDb.Tests.Functional.Queues
 {
@@ -12,14 +12,16 @@ namespace QueToDb.Tests.Functional.Queues
         public void Init()
         {
             _w.Initialize();
+            Assert.IsNotNull(_w);
             _r.Initialize();
+            Assert.IsNotNull(_r);
         }
 
         [TearDown]
         public void Dispose()
         {
-            _w.Dispose();
-            _r.Dispose();
+            //_r.Dispose();
+            //_w.Dispose();
         }
 
         #endregion

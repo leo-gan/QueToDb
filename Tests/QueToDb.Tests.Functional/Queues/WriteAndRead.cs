@@ -11,11 +11,11 @@ namespace QueToDb.Tests.Functional.Queues
     {
         private static Message CreateMessage(int msgBodySizeChars, char msgBodyFiller)
         {
-            var msgBodyBeginning = Guid.NewGuid() + " : Test message body: ";
-            var msgBodyString = msgBodyBeginning + (msgBodyBeginning.Length < msgBodySizeChars
+            string msgBodyBeginning = Guid.NewGuid() + " : Test message body: ";
+            string msgBodyString = msgBodyBeginning + (msgBodyBeginning.Length < msgBodySizeChars
                 ? new string(msgBodyFiller, msgBodySizeChars - msgBodyBeginning.Length)
                 : null);
-            var msgBody = Encoding.UTF8.GetBytes(msgBodyString);
+            byte[] msgBody = Encoding.UTF8.GetBytes(msgBodyString);
             var msg = new Message
             {
                 Body = msgBody,
@@ -29,13 +29,14 @@ namespace QueToDb.Tests.Functional.Queues
             return msg;
         }
 
-        public static void ReadWrite1Msg(IWriter w, IReader r, string transport, int msgBodySizeChars, char msgBodyFiller)
+        public static void ReadWrite1Msg(IWriter w, IReader r, string transport, int msgBodySizeChars,
+            char msgBodyFiller)
         {
-            var msg = CreateMessage(msgBodySizeChars, msgBodyFiller);
+            Message msg = CreateMessage(msgBodySizeChars, msgBodyFiller);
 
             w.Send(msg);
 
-            var msgRead = r.Receive();
+            Message msgRead = r.Receive();
 
             Assert.NotNull(msgRead);
             Assert.AreEqual(msg.Body, msgRead.Body);
@@ -45,19 +46,20 @@ namespace QueToDb.Tests.Functional.Queues
             Console.WriteLine(JsonConvert.SerializeObject(msgRead));
         }
 
-        public static void ReadWriteManyMsgInBatch(IWriter w, IReader r, string transport, int msgBodySizeChars, char msgBodyFiller, int msgNumber)
+        public static void ReadWriteManyMsgInBatch(IWriter w, IReader r, string transport, int msgBodySizeChars,
+            char msgBodyFiller, int msgNumber)
         {
-            var msg = CreateMessage(msgBodySizeChars, msgBodyFiller);
+            Message msg = CreateMessage(msgBodySizeChars, msgBodyFiller);
 
             var sw = new Stopwatch();
             sw.Start();
 
-            for (var i = 0; i < msgNumber; i++)
+            for (int i = 0; i < msgNumber; i++)
                 w.Send(msg);
 
             var msgRead = new Message();
-            var loopCounter = 0;
-            for (var i = 0; i < msgNumber; i++, loopCounter++)
+            int loopCounter = 0;
+            for (int i = 0; i < msgNumber; i++, loopCounter++)
                 msgRead = r.Receive();
             Assert.NotNull(msgRead);
             Assert.AreEqual(msg.Body, msgRead.Body); // only last msg
@@ -67,18 +69,20 @@ namespace QueToDb.Tests.Functional.Queues
 
             //Console.WriteLine("ReadWriteManyMsgInBatch(): " + JsonConvert.SerializeObject(msgRead));
             sw.Stop();
-            Console.WriteLine("{3}: In Batch: {0} msg * {1} byte :  {2} msg/sec", msgNumber, msgBodySizeChars, (msgNumber * 1000) / sw.Elapsed.Milliseconds, transport);
+            Console.WriteLine("{3}: In Batch: {0} msg * {1} byte :  {2} msg/sec", msgNumber, msgBodySizeChars,
+                (msgNumber*1000)/sw.Elapsed.Milliseconds, transport);
         }
 
-        public static void ReadWriteManyMsgInSequence(IWriter w, IReader r, string transport, int msgBodySizeChars, char msgBodyFiller, int msgNumber)
+        public static void ReadWriteManyMsgInSequence(IWriter w, IReader r, string transport, int msgBodySizeChars,
+            char msgBodyFiller, int msgNumber)
         {
-            var msg = CreateMessage(msgBodySizeChars, msgBodyFiller);
+            Message msg = CreateMessage(msgBodySizeChars, msgBodyFiller);
             var sw = new Stopwatch();
             sw.Start();
 
             var msgRead = new Message();
-            var loopCounter = 0;
-            for (var i = 0; i < msgNumber; i++, loopCounter++)
+            int loopCounter = 0;
+            for (int i = 0; i < msgNumber; i++, loopCounter++)
             {
                 w.Send(msg);
                 msgRead = r.Receive();
@@ -89,7 +93,8 @@ namespace QueToDb.Tests.Functional.Queues
             Assert.AreEqual(msgNumber, loopCounter);
             //Console.WriteLine("ReadWriteManyMsgInSequence(): " + JsonConvert.SerializeObject(msgRead));
             sw.Stop();
-            Console.WriteLine("{3}: In Sequence: {0} msg * {1} byte :  {2} msg/sec", msgNumber, msgBodySizeChars, (msgNumber * 1000) / sw.Elapsed.Milliseconds, transport);
+            Console.WriteLine("{3}: In Sequence: {0} msg * {1} byte :  {2} msg/sec", msgNumber, msgBodySizeChars,
+                (msgNumber*1000)/sw.Elapsed.Milliseconds, transport);
         }
     }
 }

@@ -67,7 +67,7 @@
     <Compile Include="Queues\MSMQ.cs" />
     <Compile Include="Queues\NetMq.cs" />
     <Compile Include="Queues\WriteAndRead.cs" />
-    <Compile Include="Redis.cs" />
+    <Compile Include="Queues\Redis.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

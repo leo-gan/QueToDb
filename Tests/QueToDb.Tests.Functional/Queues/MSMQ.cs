@@ -12,7 +12,9 @@ namespace QueToDb.Tests.Functional.Queues
         public void Init()
         {
             _w.Initialize();
+            Assert.IsNotNull(_w);
             _r.Initialize();
+            Assert.IsNotNull(_r);
         }
 
         [TearDown]

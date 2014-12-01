@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
@@ -12,15 +13,19 @@ namespace QueToDb.Queues.NetMq
 {
     public class Writer : IWriter
     {
-        private string _address = System.Configuration.ConfigurationManager.AppSettings["QueToDb.Queues.NetMq.Address"];
+        private string _address = ConfigurationManager.AppSettings["QueToDb.Queues.NetMq.Address"];
         private NetMQContext _ctx;
         private PublisherSocket _sock;
+
+        #region IWriter Members
 
         public bool Initialize(params string[] configs)
         {
             try
             {
-                _address = configs[0];
+                if (configs != null && configs.Length != 0)
+                    if (!String.IsNullOrEmpty(configs[0]))
+                        _address = configs[0];
                 _ctx = NetMQContext.Create();
                 _sock = _ctx.CreatePublisherSocket();
 
@@ -40,11 +45,13 @@ namespace QueToDb.Queues.NetMq
             if (_sock != null) _sock.Dispose();
             if (_ctx != null) _ctx.Dispose();
         }
-        
+
         public void Send(Message msg)
         {
             Send<Message>(msg);
         }
+
+        #endregion
 
         public void Send(Stream stream)
         {
