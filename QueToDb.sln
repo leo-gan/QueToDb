@@ -34,6 +34,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F0BA30
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueToDb.Tests.Functional", "Tests\QueToDb.Tests.Functional\QueToDb.Tests.Functional.csproj", "{B0D5C289-AEB4-430E-B8DA-4FE8D415C67C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueToDb.Queues.EventHub", "Queues\QueToDb.Queues.EventHub\QueToDb.Queues.EventHub.csproj", "{4309EE60-18FD-4E78-80E0-B82ACAB090DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -80,6 +82,10 @@ Global
 		{B0D5C289-AEB4-430E-B8DA-4FE8D415C67C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0D5C289-AEB4-430E-B8DA-4FE8D415C67C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0D5C289-AEB4-430E-B8DA-4FE8D415C67C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4309EE60-18FD-4E78-80E0-B82ACAB090DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4309EE60-18FD-4E78-80E0-B82ACAB090DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4309EE60-18FD-4E78-80E0-B82ACAB090DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4309EE60-18FD-4E78-80E0-B82ACAB090DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,5 +99,6 @@ Global
 		{9BFA3AD5-E0C0-47CD-B6BE-F1E54F696132} = {1849F48B-7DB7-4E2D-BD8A-D696752F8938}
 		{1DC294C3-82F2-4559-81CE-D6EF2E1C13C6} = {63A11E29-00C5-4CC8-929B-967777586268}
 		{B0D5C289-AEB4-430E-B8DA-4FE8D415C67C} = {1849F48B-7DB7-4E2D-BD8A-D696752F8938}
+		{4309EE60-18FD-4E78-80E0-B82ACAB090DB} = {63A11E29-00C5-4CC8-929B-967777586268}
 	EndGlobalSection
 EndGlobal
