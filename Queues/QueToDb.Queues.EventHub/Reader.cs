@@ -13,7 +13,7 @@ namespace QueToDb.Queues.EventHub
         private EventHubClient _client;
         private string _eventHubName;
         private EventHubConsumerGroup _group;
-        private string _offset;
+        //private string _offset;
         private EventHubReceiver _receiver;
 
         public bool Initialize(params string[] configs)
@@ -28,8 +28,11 @@ namespace QueToDb.Queues.EventHub
                             "QueToDb.Queues.EventHub.ServiceBus.ListenConnectionString"],
                         _eventHubName);
                 _group = _client.GetDefaultConsumerGroup();
-                _offset = OffsetProvider.Offset.ToString();
-                _receiver = _group.CreateReceiver(PartitionId, _offset);
+                //_offset = OffsetProvider.Offset.ToString();
+                // _receiver = _group.CreateReceiver(PartitionId, "-1", false);
+                
+                _receiver = _group.CreateReceiver(PartitionId, DateTime.UtcNow);
+
             }
             catch
             {
@@ -46,10 +49,10 @@ namespace QueToDb.Queues.EventHub
 
         public Message Receive()
         {
-            _offset = OffsetProvider.Offset.ToString();
+            //_offset = OffsetProvider.Offset.ToString();
             EventData message = _receiver.Receive(new TimeSpan(0, 0, 1));
-            _offset = message.Offset;
-            OffsetProvider.Offset = Convert.ToInt64(_offset);
+            //_offset = message.Offset;
+            //OffsetProvider.Offset = Convert.ToInt64(_offset);
             return
                 JsonConvert.DeserializeObject<Message>(Encoding.UTF8.GetString(message.GetBytes()));
         }

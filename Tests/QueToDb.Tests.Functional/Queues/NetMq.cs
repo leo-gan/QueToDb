@@ -11,10 +11,10 @@ namespace QueToDb.Tests.Functional.Queues
         [SetUp]
         public void Init()
         {
-            _w.Initialize();
-            Assert.IsNotNull(_w);
-            _r.Initialize();
-            Assert.IsNotNull(_r);
+            var isInitialized = _w.Initialize();
+            Assert.IsTrue(isInitialized);
+            isInitialized = _r.Initialize();
+            Assert.IsTrue(isInitialized);
         }
 
         [TearDown]

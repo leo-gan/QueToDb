@@ -20,7 +20,7 @@ namespace QueToDb.Queues.EventHub
             get
             {
                 if (String.IsNullOrEmpty(_storageFilePath))
-                    _storageFilePath = @"OffsetStorage.txt";
+                    _storageFilePath = @"C:\Projects\GLD\QueToDb\Queues\QueToDb.Queues.EventHub\OffsetStorage.txt";
                 return _storageFilePath;
             }
             set { _storageFilePath = value; }

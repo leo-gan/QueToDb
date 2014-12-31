@@ -9,3 +9,14 @@ F:\Projects\Leo\Git\QueToDb\Queues\QueToDb.Queues.NetMq\obj\Debug\QueToDb.Queues
 F:\Projects\Leo\Git\QueToDb\Queues\QueToDb.Queues.NetMq\obj\Debug\QueToDb.Queues.NetMq.dll
 F:\Projects\Leo\Git\QueToDb\Queues\QueToDb.Queues.NetMq\obj\Debug\QueToDb.Queues.NetMq.pdb
 F:\Projects\Leo\Git\QueToDb\Queues\QueToDb.Queues.NetMq\bin\Debug\QueToDb.Queues.NetMq.dll.config
+C:\Projects\GLD\QueToDb\Queues\QueToDb.Queues.NetMq\bin\Debug\QueToDb.Queues.NetMq.dll.config
+C:\Projects\GLD\QueToDb\Queues\QueToDb.Queues.NetMq\bin\Debug\QueToDb.Queues.NetMq.dll
+C:\Projects\GLD\QueToDb\Queues\QueToDb.Queues.NetMq\bin\Debug\QueToDb.Queues.NetMq.pdb
+C:\Projects\GLD\QueToDb\Queues\QueToDb.Queues.NetMq\bin\Debug\NetMQ.dll
+C:\Projects\GLD\QueToDb\Queues\QueToDb.Queues.NetMq\bin\Debug\Newtonsoft.Json.dll
+C:\Projects\GLD\QueToDb\Queues\QueToDb.Queues.NetMq\bin\Debug\QueToDb.Quer.dll
+C:\Projects\GLD\QueToDb\Queues\QueToDb.Queues.NetMq\bin\Debug\QueToDb.Quer.pdb
+C:\Projects\GLD\QueToDb\Queues\QueToDb.Queues.NetMq\bin\Debug\Newtonsoft.Json.xml
+C:\Projects\GLD\QueToDb\Queues\QueToDb.Queues.NetMq\obj\Debug\QueToDb.Queues.NetMq.csprojResolveAssemblyReference.cache
+C:\Projects\GLD\QueToDb\Queues\QueToDb.Queues.NetMq\obj\Debug\QueToDb.Queues.NetMq.dll
+C:\Projects\GLD\QueToDb\Queues\QueToDb.Queues.NetMq\obj\Debug\QueToDb.Queues.NetMq.pdb

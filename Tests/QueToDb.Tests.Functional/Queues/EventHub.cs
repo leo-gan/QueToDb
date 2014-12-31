@@ -1,21 +1,22 @@
 ﻿using NUnit.Framework;
-using QueToDb.Queues.MSMQ;
+using QueToDb.Queues.EventHub;
 
 namespace QueToDb.Tests.Functional.Queues
 {
     [TestFixture]
-    public class MSMQ
+    public class EventHub
+
     {
         #region Setup/Teardown
 
         [SetUp]
         public void Init()
         {
-            var isInitialized = _w.Initialize();
+            var isInitialized = _r.Initialize();
             Assert.IsTrue(isInitialized);
-            isInitialized = _r.Initialize();
+            isInitialized = _w.Initialize();
             Assert.IsTrue(isInitialized);
-        }
+         }
 
         [TearDown]
         public void Dispose()
@@ -26,7 +27,7 @@ namespace QueToDb.Tests.Functional.Queues
 
         #endregion
 
-        private const string Transport = "MSMQ";
+        private const string Transport = "EventHub";
         private readonly Writer _w = new Writer();
         private readonly Reader _r = new Reader();
 
@@ -39,8 +40,10 @@ namespace QueToDb.Tests.Functional.Queues
         }
 
         [Test]
-        [TestCase(100, '*', 10000)]
-        [TestCase(100, '*', 30000)]
+        [TestCase(10, '*', 1000)]
+        [TestCase(10, '*', 3000)]
+        [TestCase(100, '*', 1000)]
+        [TestCase(100, '*', 3000)]
         [TestCase(1000, '*', 1000)]
         [TestCase(1000, '*', 3000)]
         public void ReadWriteManyMsgInBatch(int msgBodySizeChars, char msgBodyFiller, int msgNumber)
@@ -49,8 +52,10 @@ namespace QueToDb.Tests.Functional.Queues
         }
 
         [Test]
-        [TestCase(100, '*', 10000)]
-        [TestCase(100, '*', 30000)]
+        [TestCase(10, '*', 1000)]
+        [TestCase(10, '*', 3000)]
+        [TestCase(100, '*', 1000)]
+        [TestCase(100, '*', 3000)]
         [TestCase(1000, '*', 1000)]
         [TestCase(1000, '*', 3000)]
         public void ReadWriteManyMsgInSequence(int msgBodySizeChars, char msgBodyFiller, int msgNumber)

@@ -9,9 +9,9 @@ namespace QueToDb.Tests.Functional.Queues
 {
     public class WriteAndRead
     {
-        private static Message CreateMessage(int msgBodySizeChars, char msgBodyFiller)
+        public static Message CreateMessage(int msgBodySizeChars, char msgBodyFiller)
         {
-            string msgBodyBeginning = Guid.NewGuid() + " : Test message body: ";
+            string msgBodyBeginning = Guid.NewGuid() + " - Test message body";
             string msgBodyString = msgBodyBeginning + (msgBodyBeginning.Length < msgBodySizeChars
                 ? new string(msgBodyFiller, msgBodySizeChars - msgBodyBeginning.Length)
                 : null);

@@ -64,8 +64,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queues\EventHubWithHost.cs" />
     <Compile Include="Queues\MSMQ.cs" />
     <Compile Include="Queues\NetMq.cs" />
+    <Compile Include="Queues\EventHub.cs" />
     <Compile Include="Queues\WriteAndRead.cs" />
     <Compile Include="Queues\Redis.cs" />
   </ItemGroup>
@@ -77,6 +79,14 @@
     <ProjectReference Include="..\..\QueToDb.Quer\QueToDb.Quer.csproj">
       <Project>{1efe9467-71da-4adf-aff1-ff4f753f1c14}</Project>
       <Name>QueToDb.Quer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Queues\QueToDb.Queues.EventHubWithHost\QueToDb.Queues.EventHubWithHost.csproj">
+      <Project>{f735a6f6-599c-43dd-82c0-6e3774b05951}</Project>
+      <Name>QueToDb.Queues.EventHubWithHost</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Queues\QueToDb.Queues.EventHub\QueToDb.Queues.EventHub.csproj">
+      <Project>{4309ee60-18fd-4e78-80e0-b82acab090db}</Project>
+      <Name>QueToDb.Queues.EventHub</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Queues\QueToDb.Queues.MSMQ\QueToDb.Queues.MSMQ.csproj">
       <Project>{57182830-8121-4394-831c-ffcc4a065a38}</Project>
