@@ -38,6 +38,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueToDb.Queues.EventHub", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueToDb.Queues.EventHubWithHost", "Queues\QueToDb.Queues.EventHubWithHost\QueToDb.Queues.EventHubWithHost.csproj", "{F735A6F6-599C-43DD-82C0-6E3774B05951}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueToDb.Queues.AzureQueue", "Queues\QueToDb.Queues.AzureQueue\QueToDb.Queues.AzureQueue.csproj", "{44657B32-0775-4764-B17B-3E8524F6CD20}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -92,6 +94,10 @@ Global
 		{F735A6F6-599C-43DD-82C0-6E3774B05951}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F735A6F6-599C-43DD-82C0-6E3774B05951}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F735A6F6-599C-43DD-82C0-6E3774B05951}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44657B32-0775-4764-B17B-3E8524F6CD20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44657B32-0775-4764-B17B-3E8524F6CD20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44657B32-0775-4764-B17B-3E8524F6CD20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44657B32-0775-4764-B17B-3E8524F6CD20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -107,5 +113,6 @@ Global
 		{B0D5C289-AEB4-430E-B8DA-4FE8D415C67C} = {1849F48B-7DB7-4E2D-BD8A-D696752F8938}
 		{4309EE60-18FD-4E78-80E0-B82ACAB090DB} = {63A11E29-00C5-4CC8-929B-967777586268}
 		{F735A6F6-599C-43DD-82C0-6E3774B05951} = {63A11E29-00C5-4CC8-929B-967777586268}
+		{44657B32-0775-4764-B17B-3E8524F6CD20} = {63A11E29-00C5-4CC8-929B-967777586268}
 	EndGlobalSection
 EndGlobal
