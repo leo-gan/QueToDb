@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queues\AzureTopic.cs" />
     <Compile Include="Queues\AzureQueue.cs" />
     <Compile Include="Queues\EventHubWithHost.cs" />
     <Compile Include="Queues\MSMQ.cs" />
@@ -84,6 +85,10 @@
     <ProjectReference Include="..\..\Queues\QueToDb.Queues.AzureQueue\QueToDb.Queues.AzureQueue.csproj">
       <Project>{44657b32-0775-4764-b17b-3e8524f6cd20}</Project>
       <Name>QueToDb.Queues.AzureQueue</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Queues\QueToDb.Queues.AzureTopic\QueToDb.Queues.AzureTopic.csproj">
+      <Project>{6cb3dfc3-754f-43ce-ac9b-116ee53798d9}</Project>
+      <Name>QueToDb.Queues.AzureTopic</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Queues\QueToDb.Queues.EventHubWithHost\QueToDb.Queues.EventHubWithHost.csproj">
       <Project>{f735a6f6-599c-43dd-82c0-6e3774b05951}</Project>
