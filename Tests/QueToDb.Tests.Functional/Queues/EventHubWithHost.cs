@@ -10,8 +10,7 @@ namespace QueToDb.Tests.Functional.Queues
     [TestFixture]
     internal class EventHubWithHost
     {
-        [SetUp]
-        public void Init()
+        public EventHubWithHost()
         {
             bool isInitialized = _r.Initialize();
             Assert.IsTrue(isInitialized);
@@ -19,12 +18,28 @@ namespace QueToDb.Tests.Functional.Queues
             Assert.IsTrue(isInitialized);
         }
 
-        [TearDown]
-        public void Dispose()
+        ~EventHubWithHost()
         {
             _w.Dispose();
             _r.Dispose();
         }
+
+
+        //[SetUp]
+        //public void Init()
+        //{
+        //    bool isInitialized = _r.Initialize();
+        //    Assert.IsTrue(isInitialized);
+        //    isInitialized = _w.Initialize();
+        //    Assert.IsTrue(isInitialized);
+        //}
+
+        //[TearDown]
+        //public void Dispose()
+        //{
+        //    _w.Dispose();
+        //    _r.Dispose();
+        //}
 
         private const string Transport = "EventHubWithHost";
         private readonly Writer _w = new Writer();

@@ -15,6 +15,7 @@ namespace QueToDb.Tests.Functional.Queues
             Assert.IsTrue(isInitialized);
             isInitialized = _r.Initialize();
             Assert.IsTrue(isInitialized);
+            _r.CleanUpAllMessages();
         }
 
         [TearDown]

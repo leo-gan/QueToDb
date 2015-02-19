@@ -6,12 +6,15 @@ using Newtonsoft.Json;
 using QueToDb.Quer;
 using StackExchange.Redis;
 
-namespace QueToDb.Queues.Redis
+namespace QueToDb.Queues.AzureRedis
 {
     public class Reader : IReader
     {
-        private readonly string _address = ConfigurationManager.AppSettings["QueToDb.Queues.Redis.ConnectionString"];
-        private readonly string _queueName = ConfigurationManager.AppSettings["QueToDb.Queues.Redis.QueueName"];
+        private readonly string _address =
+            ConfigurationManager.AppSettings["QueToDb.Queues.AzureRedis.ConnectionString"];
+
+        private readonly string _queueName =
+            ConfigurationManager.AppSettings["QueToDb.Queues.AzureRedis.QueueName"];
 
         private IDatabase _db;
         private ConnectionMultiplexer _redis;
@@ -38,7 +41,6 @@ namespace QueToDb.Queues.Redis
             if (_redis != null) _redis.Dispose();
         }
 
-
         public Message Receive()
         {
             return Receive<Message>();
@@ -48,7 +50,7 @@ namespace QueToDb.Queues.Redis
 
         public T Receive<T>()
         {
-            var byteArray = (byte[]) _db.ListRightPop(_queueName, CommandFlags.None);
+            var byteArray = (byte[]) _db.ListRightPop(_queueName);
             return JsonConvert.DeserializeObject<T>(Encoding.UTF8.GetString(byteArray));
         }
 
@@ -57,6 +59,5 @@ namespace QueToDb.Queues.Redis
             _db.ListTrim(_queueName, 0, 1); // the (.., 0, 0) doesn't work for some unknown reason.
             _db.ListRightPop(_queueName);
         }
-
     }
 }

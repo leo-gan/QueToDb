@@ -70,6 +70,7 @@
     <Compile Include="Queues\MSMQ.cs" />
     <Compile Include="Queues\NetMq.cs" />
     <Compile Include="Queues\EventHub.cs" />
+    <Compile Include="Queues\AzureRedis.cs" />
     <Compile Include="Queues\WriteAndRead.cs" />
     <Compile Include="Queues\Redis.cs" />
   </ItemGroup>
@@ -85,6 +86,10 @@
     <ProjectReference Include="..\..\Queues\QueToDb.Queues.AzureQueue\QueToDb.Queues.AzureQueue.csproj">
       <Project>{44657b32-0775-4764-b17b-3e8524f6cd20}</Project>
       <Name>QueToDb.Queues.AzureQueue</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Queues\QueToDb.Queues.AzureRedis\QueToDb.Queues.AzureRedis.csproj">
+      <Project>{0f476889-b822-466c-accb-88d22c910da4}</Project>
+      <Name>QueToDb.Queues.AzureRedis</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Queues\QueToDb.Queues.AzureTopic\QueToDb.Queues.AzureTopic.csproj">
       <Project>{6cb3dfc3-754f-43ce-ac9b-116ee53798d9}</Project>
